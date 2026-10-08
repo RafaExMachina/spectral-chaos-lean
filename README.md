@@ -590,7 +590,7 @@ Ainda resta formalizar, entre outros pontos:
 $$
 R(k+1)=\psi R(k)
 $$
-   diretamente a partir da estrutura do mapa.
+diretamente a partir da estrutura do mapa.
 
 Esse conjunto constitui a continuação natural do projeto.
 
@@ -602,17 +602,17 @@ Uma estratégia incremental é:
 
 ```mermaid
 flowchart TD
-    A[Eq. 1<br/>Definir o mapa linear por partes]
-    B[Eq. 2<br/>Sistema dinâmico discreto]
-    C[Eq. 4<br/>Densidade invariante uniforme]
-    D[Eq. 7<br/>Autocorrelação como integral]
-    E[Eq. 8<br/>Segmentos de f^k]
-    F[Eq. 10<br/>Integral em cada segmento]
-    G[Eq. 11<br/>Expressão de R(k)]
-    H[Eqs. 12–16<br/>Refinamento dos segmentos]
-    I[Eq. 17<br/>R(k+1)=ψR(k)]
-    J[Eq. 18<br/>R(k)=1/3 ψ^|k|]
-    K[Eq. 19<br/>PSD fechada]
+    A["Eq. 1<br/>Definir o mapa linear por partes"]
+    B["Eq. 2<br/>Sistema dinâmico discreto"]
+    C["Eq. 4<br/>Densidade invariante uniforme"]
+    D["Eq. 7<br/>Autocorrelação como integral"]
+    E["Eq. 8<br/>Segmentos de f^k"]
+    F["Eq. 10<br/>Integral em cada segmento"]
+    G["Eq. 11<br/>Expressão de R(k)"]
+    H["Eqs. 12–16<br/>Refinamento dos segmentos"]
+    I["Eq. 17<br/>R(k+1)=ψR(k)"]
+    J["Eq. 18<br/>R(k)=1/3 ψ^|k|"]
+    K["Eq. 19<br/>PSD fechada"]
 
     A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K
 ```
