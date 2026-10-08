@@ -361,7 +361,7 @@ A formalização usa resultados da Mathlib para séries geométricas em espaços
 Também foi provado:
 
 $$
-\operatorname{Re}\left[(\psi e^{i\omega})^n\right]=\psi^n\cos(n\omega).
+\mathrm{Re}\left[(\psi e^{i\omega})^n\right]=\psi^n\cos(n\omega).
 $$
 
 Esse resultado permite converter a série geométrica complexa em uma soma trigonométrica real.
@@ -373,23 +373,15 @@ Esse resultado permite converter a série geométrica complexa em uma soma trigo
 Foi formalmente demonstrado:
 
 $$
-
 \sum_{n=0}^{\infty}\psi^n\cos(n\omega)=\frac{1-\psi\cos\omega}{1-2\psi\cos\omega+\psi^2}
-
 $$
 
 para $$\(|\psi|<1\)$$.
 
-Em seguida, separando o termo \(n=0\), foi obtida a cauda:
+Em seguida, separando o termo $$\(n=0\)$$, foi obtida a cauda:
 
 $$
-\boxed{
-\sum_{n=1}^{\infty}
-\psi^n\cos(n\omega)
-=
-\frac{\psi\cos\omega-\psi^2}
-{1-2\psi\cos\omega+\psi^2}
-}.
+\sum_{n=1}^{\infty}\psi^n\cos(n\omega)=\frac{\psi\cos\omega-\psi^2}{1-2\psi\cos\omega+\psi^2}.
 $$
 
 Essa é a identidade central usada para transformar a série da PSD em sua forma racional fechada.
@@ -403,11 +395,7 @@ A formalização não apenas manipula a `tsum`; ela também verifica que a séri
 Para cada termo,
 
 $$
-\left|
-\frac13\psi^{|k|}e^{-ik\omega}
-\right|
-=
-\frac13|\psi|^{|k|},
+\left|\frac13\psi^{|k|}e^{-ik\omega}\right|=\frac13|\psi|^{|k|},
 $$
 
 pois
@@ -416,13 +404,13 @@ $$
 |e^{-ik\omega}|=1.
 $$
 
-Como \(|\psi|<1\), a série geométrica bilateral correspondente converge. Isso foi usado para provar em Lean que
+Como $$\(|\psi|<1\)$$, a série geométrica bilateral correspondente converge. Isso foi usado para provar em Lean que
 
 ```lean
 Summable (fun k : ℤ => dtftTerm ψ ω k)
 ```
 
-sob a hipótese \(|\psi|<1\).
+sob a hipótese $$\(|\psi|<1\)$$.
 
 ---
 
@@ -437,9 +425,7 @@ $$
 Em seguida, demonstrou-se que
 
 $$
-T(n)+T(-n)
-=
-\frac23\psi^n\cos(n\omega).
+T(n)+T(-n)=\frac23\psi^n\cos(n\omega).
 $$
 
 Em Lean:
@@ -461,13 +447,7 @@ theorem dtftTerm_pair
 Esse é o passo que transforma a DTFT bilateral em
 
 $$
-P(\omega)
-=
-\frac13
-+
-\frac23
-\sum_{n=1}^{\infty}
-\psi^n\cos(n\omega).
+P(\omega)=\frac{1}{3}+\frac{2}{3}\sum_{n=1}^{\infty}\psi^n\cos(n\omega).
 $$
 
 ---
