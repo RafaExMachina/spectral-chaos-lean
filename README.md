@@ -72,16 +72,16 @@ O fluxo formalizado pode ser resumido assim:
 
 ```mermaid
 flowchart TD
-    A[Recorrência da autocorrelação<br/>R(k+1) = ψ R(k)]
-    B[Forma fechada para k ≥ 0<br/>R(k) = 1/3 · ψ^k]
-    C[Extensão bilateral<br/>R(k) = 1/3 · ψ^|k|]
-    D[Definição da DTFT bilateral<br/>Σ R(k)e^(-ikω)]
-    E[Convergência absoluta<br/>|ψ| < 1]
-    F[Pareamento dos termos +n e -n]
-    G[Série real de cossenos]
-    H[Série geométrica complexa]
-    I[Fórmula fechada da soma trigonométrica]
-    J[PSD fechada<br/>(1-ψ²)/(3(1-2ψ cosω+ψ²))]
+    A["Recorrência da autocorrelação<br/>R(k+1) = ψ R(k)"]
+    B["Forma fechada para k ≥ 0<br/>R(k) = 1/3 · ψ^k"]
+    C["Extensão bilateral<br/>R(k) = 1/3 · ψ^|k|"]
+    D["Definição da DTFT bilateral<br/>Σ R(k)e^(-ikω)"]
+    E["Convergência absoluta<br/>|ψ| < 1"]
+    F["Pareamento dos termos +n e -n"]
+    G['Série real de cossenos"]
+    H["Série geométrica complexa"]
+    I["Fórmula fechada da soma trigonométrica"]
+    J["PSD fechada<br/>(1-ψ²)/(3(1-2ψ cosω+ψ²))"]
 
     A --> B
     B --> C
