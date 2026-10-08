@@ -319,10 +319,7 @@ def psdDTFT
 que corresponde diretamente a
 
 $$
-P(\omega)
-=
-\sum_{k\in\mathbb Z}
-R(k)e^{-ik\omega}.
+P(\omega)=\sum_{k\in\mathbb Z}R(k)e^{-ik\omega}.
 $$
 
 O termo central também foi verificado:
@@ -356,9 +353,7 @@ $$
 e portanto a série geométrica converge:
 
 $$
-\sum_{n=0}^{\infty}q^n
-=
-\frac{1}{1-q}.
+\sum_{n=0}^{\infty}q^n=\frac{1}{1-q}.
 $$
 
 A formalização usa resultados da Mathlib para séries geométricas em espaços normados.
@@ -366,10 +361,7 @@ A formalização usa resultados da Mathlib para séries geométricas em espaços
 Também foi provado:
 
 $$
-\operatorname{Re}
-\left[(\psi e^{i\omega})^n\right]
-=
-\psi^n\cos(n\omega).
+\operatorname{Re}\left[(\psi e^{i\omega})^n\right]=\psi^n\cos(n\omega).
 $$
 
 Esse resultado permite converter a série geométrica complexa em uma soma trigonométrica real.
@@ -381,16 +373,12 @@ Esse resultado permite converter a série geométrica complexa em uma soma trigo
 Foi formalmente demonstrado:
 
 $$
-\boxed{
-\sum_{n=0}^{\infty}
-\psi^n\cos(n\omega)
-=
-\frac{1-\psi\cos\omega}
-{1-2\psi\cos\omega+\psi^2}
-}
+
+\sum_{n=0}^{\infty}\psi^n\cos(n\omega)=\frac{1-\psi\cos\omega}{1-2\psi\cos\omega+\psi^2}
+
 $$
 
-para \(|\psi|<1\).
+para $$\(|\psi|<1\)$$.
 
 Em seguida, separando o termo \(n=0\), foi obtida a cauda:
 
