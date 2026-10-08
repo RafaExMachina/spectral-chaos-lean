@@ -28,9 +28,7 @@ $$
 e
 
 $$
-P(\omega)=
-\frac{1-\psi^2}
-{3\left(1-2\psi\cos(\omega)+\psi^2\right)}.
+P(\omega)=\frac{1-\psi^2}{3\left(1-2\psi\cos(\omega)+\psi^2\right)}.
 $$
 
 No artigo, essas relações correspondem às equações **(17)**, **(18)** e **(19)**.
@@ -117,10 +115,7 @@ flowchart LR
 No artigo,
 
 $$
-\psi=
-\frac{1}{4}
-\sum_{j=1}^{r}
-\beta_j(\alpha_j-\alpha_{j-1})^2.
+\psi=\frac{1}{4}\sum_{j=1}^{r}\beta_j(\alpha_j-\alpha_{j-1})^2.
 $$
 
 Esse parâmetro controla diretamente a sequência de autocorrelação e a forma do espectro.
@@ -134,9 +129,7 @@ Na formalização atual, a derivação geral dessa expressão a partir de todos 
 Para o caso discutido no artigo,
 
 $$
-\psi(\alpha)
-=
-\frac{1-2\alpha-\alpha^2}{2}.
+\psi(\alpha)=\frac{1-2\alpha-\alpha^2}{2}.
 $$
 
 Em Lean:
@@ -161,7 +154,7 @@ theorem psi_zero_at_sqrt2_sub_one :
 Portanto,
 
 $$
-\boxed{\psi(\sqrt{2}-1)=0}.
+\psi(\sqrt{2}-1)=0.
 $$
 
 ---
@@ -180,9 +173,7 @@ def PSD (ψ ω : ℝ) : ℝ :=
 Isto representa
 
 $$
-P(\omega)=
-\frac{1-\psi^2}
-{3(1-2\psi\cos\omega+\psi^2)}.
+P(\omega)=\frac{1-\psi^2}{3(1-2\psi\cos\omega+\psi^2)}.
 $$
 
 Foi demonstrado, por exemplo, que \(\psi=0\) produz uma PSD constante:
@@ -208,7 +199,7 @@ theorem r3_white_spectrum (ω : ℝ) :
 Logo,
 
 $$
-\boxed{P(\omega)=\frac13\quad\forall\omega},
+P(\omega)=\frac13\quad\forall\omega,
 $$
 
 formalizando o resultado de espectro branco desse caso particular.
