@@ -33,7 +33,7 @@ $$
 
 No artigo, essas relações correspondem às equações **(17)**, **(18)** e **(19)**.
 
-Além disso, foi formalizado um caso particular apresentado no artigo para \(r=3\), no qual
+Além disso, foi formalizado um caso particular apresentado no artigo para $$\(r=3\)$$, no qual
 
 $$
 \psi(\alpha)=\frac{1-2\alpha-\alpha^2}{2},
@@ -45,7 +45,7 @@ $$
 \alpha=\sqrt{2}-1,
 $$
 
-tem-se \(\psi=0\), o que conduz a um **espectro branco**.
+tem-se $$\(\psi=0\)$$, o que conduz a um **espectro branco**.
 
 ---
 
@@ -56,7 +56,7 @@ Em uma demonstração matemática tradicional, os passos são validados por insp
 Isso oferece algumas vantagens importantes:
 
 - elimina passos algébricos implícitos;
-- torna explícitas hipóteses como \(|\psi|<1\);
+- torna explícitas hipóteses como $$\(|\psi|<1\)$$;
 - força a verificação da convergência das séries utilizadas;
 - separa resultados auxiliares em lemas reutilizáveis;
 - permite verificar simbolicamente identidades envolvendo números reais e complexos;
@@ -110,7 +110,7 @@ flowchart LR
 
 ## 4. Estrutura matemática usada
 
-### 4.1 Parâmetro espectral \(\psi\)
+### 4.1 Parâmetro espectral $$\(\psi\)$$
 
 No artigo,
 
@@ -120,7 +120,7 @@ $$
 
 Esse parâmetro controla diretamente a sequência de autocorrelação e a forma do espectro.
 
-Na formalização atual, a derivação geral dessa expressão a partir de todos os segmentos do mapa ainda não foi formalizada integralmente. O trabalho atual concentra-se principalmente nas consequências matemáticas de \(\psi\) e na passagem ACS \(\rightarrow\) PSD.
+Na formalização atual, a derivação geral dessa expressão a partir de todos os segmentos do mapa ainda não foi formalizada integralmente. O trabalho atual concentra-se principalmente nas consequências matemáticas de $$\(\psi\)$$ e na passagem ACS $$\(\rightarrow\)$$ PSD.
 
 ---
 
@@ -176,7 +176,7 @@ $$
 P(\omega)=\frac{1-\psi^2}{3(1-2\psi\cos\omega+\psi^2)}.
 $$
 
-Foi demonstrado, por exemplo, que \(\psi=0\) produz uma PSD constante:
+Foi demonstrado, por exemplo, que $$\(\psi=0\)$$ produz uma PSD constante:
 
 ```lean
 
@@ -185,7 +185,7 @@ theorem white_spectrum (ω : ℝ) :
   norm_num [PSD]
 ```
 
-E combinando o resultado com \(\alpha=\sqrt2-1\):
+E combinando o resultado com $$\(\alpha=\sqrt2-1\)$$:
 
 ```lean
 
@@ -223,8 +223,7 @@ $$
 foi usado o princípio de indução do Lean para provar:
 
 $$
-R(k)=\frac13\psi^k,
-\qquad k\in\mathbb N.
+R(k)=\frac13\psi^k, \qquad k\in\mathbb N.
 $$
 
 O teorema formal é:
@@ -472,11 +471,7 @@ def psdSeries (ψ ω : ℝ) : ℝ :=
 E foi demonstrado formalmente que
 
 $$
-\boxed{
-\operatorname{psdDTFT}(\psi,\omega)
-=
-\operatorname{psdSeries}(\psi,\omega)
-}.
+\mathrm{psdDTFT}(\psi,\omega)=\mathrm{psdSeries}(\psi,\omega).
 $$
 
 ---
@@ -502,11 +497,7 @@ theorem psd_closed_form
 Assim,
 
 $$
-\boxed{
-P(\omega)=
-\frac{1-\psi^2}
-{3(1-2\psi\cos\omega+\psi^2)}
-}.
+P(\omega)=\frac{1-\psi^2}{3(1-2\psi\cos\omega+\psi^2)}.
 $$
 
 ---
@@ -541,14 +532,7 @@ theorem dtft_eq_psd
 Matematicamente, o Lean certifica:
 
 $$
-\boxed{
-\sum_{k\in\mathbb Z}
-\frac13\psi^{|k|}e^{-ik\omega}
-=
-\frac{1-\psi^2}
-{3\left(1-2\psi\cos\omega+\psi^2\right)}
-}
-\qquad |\psi|<1.
+\sum_{k\in\mathbb Z}\frac13\psi^{|k|}e^{-ik\omega}=\frac{1-\psi^2}{3\left(1-2\psi\cos\omega+\psi^2\right)}\qquad |\psi|<1.
 $$
 
 Esse resultado formaliza a passagem entre as equações **(18)** e **(19)** do artigo.
@@ -585,16 +569,7 @@ Esse resultado formaliza a passagem entre as equações **(18)** e **(19)** do a
 O projeto já verifica formalmente uma parte substancial da derivação espectral, em particular:
 
 $$
-\boxed{
-R(k+1)=\psi R(k)
-\Longrightarrow
-R(k)=\frac13\psi^{|k|}
-\Longrightarrow
-\operatorname{DTFT}\{R\}
-=
-\frac{1-\psi^2}
-{3(1-2\psi\cos\omega+\psi^2)}
-}.
+R(k+1)=\psi R(k)\Longrightarrow R(k)=\frac13\psi^{|k|} \Longrightarrow \mathrm{DTFT}\{R\}=\frac{1-\psi^2}{3(1-2\psi\cos\omega+\psi^2)}.
 $$
 
 Também é formalizado um dos casos de espectro branco discutidos no artigo.
@@ -606,14 +581,14 @@ A formalização atual **não deve ser interpretada como uma prova Lean de todo 
 Ainda resta formalizar, entre outros pontos:
 
 1. a própria família geral de mapas lineares por partes da equação (1);
-2. a iteração \(s(n+1)=f(s(n))\);
+2. a iteração $$\(s(n+1)=f(s(n))\)$$;
 3. a densidade invariante uniforme;
 4. a expressão integral da autocorrelação;
-5. a decomposição de \(f^k\) em \(r^k\) segmentos;
+5. a decomposição de $$\(f^k\)$$ em $$\(r^k\)$$ segmentos;
 6. a derivação formal das equações (11)–(16);
 7. a obtenção de
- $$
-   R(k+1)=\psi R(k)
+$$
+R(k+1)=\psi R(k)
 $$
    diretamente a partir da estrutura do mapa.
 
@@ -730,14 +705,7 @@ R. A. da Costa and M. Eisencraft, “Spectral characteristics of a general piece
 Teorema principal verificado:
 
 $$
-\boxed{
-\sum_{k\in\mathbb Z}
-\frac13\psi^{|k|}e^{-ik\omega}
-=
-\frac{1-\psi^2}
-{3(1-2\psi\cos\omega+\psi^2)}
-},
-\qquad |\psi|<1.
+\sum_{k\in\mathbb Z}\frac13\psi^{|k|}e^{-ik\omega}=\frac{1-\psi^2}{3(1-2\psi\cos\omega+\psi^2)},\qquad |\psi|<1.
 $$
 
-A próxima etapa natural é formalizar a derivação de \(R(k+1)=\psi R(k)\) diretamente a partir da família geral de mapas lineares por partes descrita no artigo.
+A próxima etapa natural é formalizar a derivação de $$\(R(k+1)=\psi R(k)\)$$ diretamente a partir da família geral de mapas lineares por partes descrita no artigo.
