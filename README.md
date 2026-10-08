@@ -556,9 +556,7 @@ Esse resultado formaliza a passagem entre as equações **(18)** e **(19)** do a
 | DTFT bilateral = série real de cossenos | ✅ Provado em Lean |
 | Série real = PSD fechada | ✅ Provado em Lean |
 | DTFT bilateral = equação (19) | ✅ Provado em Lean |
-| Derivação completa do mapa da eq. (1) até a recorrência da eq. (17) | ⏳ Trabalho futuro |
-| Prova formal completa da densidade invariante uniforme | ⏳ Trabalho futuro |
-| Formalização integral das equações (1)–(17) | ⏳ Trabalho futuro |
+
 
 ---
 
@@ -586,11 +584,7 @@ Ainda resta formalizar, entre outros pontos:
 4. a expressão integral da autocorrelação;
 5. a decomposição de $$\(f^k\)$$ em $$\(r^k\)$$ segmentos;
 6. a derivação formal das equações (11)–(16);
-7. a obtenção de
-$$
-R(k+1)=\psi R(k)
-$$
-diretamente a partir da estrutura do mapa.
+7. a obtenção de $$R(k+1)=\psi R(k)$$ diretamente a partir da estrutura do mapa.
 
 Esse conjunto constitui a continuação natural do projeto.
 
