@@ -78,7 +78,7 @@ flowchart TD
     D["Definição da DTFT bilateral<br/>Σ R(k)e^(-ikω)"]
     E["Convergência absoluta<br/>|ψ| < 1"]
     F["Pareamento dos termos +n e -n"]
-    G['Série real de cossenos"]
+    G["Série real de cossenos"]
     H["Série geométrica complexa"]
     I["Fórmula fechada da soma trigonométrica"]
     J["PSD fechada<br/>(1-ψ²)/(3(1-2ψ cosω+ψ²))"]
