@@ -98,10 +98,10 @@ Também foi verificado o caso particular:
 
 ```mermaid
 flowchart LR
-    A[α = √2 - 1]
-    B[ψ(α) = 0]
-    C[P(ω) = 1/3]
-    D[Espectro branco]
+    A["α = √2 - 1"]
+    B["ψ(α) = 0"]
+    C["P(ω) = 1/3"]
+    D["Espectro branco"]
 
     A --> B --> C --> D
 ```
