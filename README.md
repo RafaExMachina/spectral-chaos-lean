@@ -17,13 +17,13 @@ O artigo estuda uma família geral de mapas caóticos lineares por partes e deri
 
 Nesta formalização, o foco inicial foi verificar formalmente a passagem entre os resultados centrais:
 
-\[
+$$
 R(k+1)=\psi R(k),
-\]
+$$
 
-\[
+$$
 R(k)=\frac{1}{3}\psi^{|k|},
-\]
+$$
 
 e
 
