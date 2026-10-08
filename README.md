@@ -543,16 +543,16 @@ Esse resultado formaliza a passagem entre as equações **(18)** e **(19)** do a
 
 | Resultado | Situação |
 |---|---|
-| \(\psi(\sqrt2-1)=0\) para o caso \(r=3\) | ✅ Provado em Lean |
-| \(\psi=0\Rightarrow P(\omega)=1/3\) | ✅ Provado em Lean |
-| Caso \(r=3\), \(\alpha=\sqrt2-1\Rightarrow\) espectro branco | ✅ Provado em Lean |
-| \(R(k+1)=\psi R(k)\Rightarrow R(k)=\frac13\psi^k\) | ✅ Provado em Lean |
-| Simetria \(R(-k)=R(k)\) | ✅ Provado em Lean |
+| $$\(\psi(\sqrt2-1)=0\)$$ para o caso $$\(r=3\)$$ | ✅ Provado em Lean |
+| $$\(\psi=0\Rightarrow P(\omega)=1/3\)$$ | ✅ Provado em Lean |
+| Caso $$\(r=3\)$$, $$\(\alpha=\sqrt2-1\Rightarrow\)$$ espectro branco | ✅ Provado em Lean |
+| $$\(R(k+1)=\psi R(k)\Rightarrow R(k)=\frac13\psi^k\)$$ | ✅ Provado em Lean |
+| Simetria $$\(R(-k)=R(k)\)$$ | ✅ Provado em Lean |
 | Convergência da série geométrica complexa | ✅ Provado em Lean |
-| \(\operatorname{Re}[(\psi e^{i\omega})^n]=\psi^n\cos(n\omega)\) | ✅ Provado em Lean |
+| $$\(\mathrm{Re}[(\psi e^{i\omega})^n]=\psi^n\cos(n\omega)\)$$ | ✅ Provado em Lean |
 | Soma trigonométrica geométrica | ✅ Provado em Lean |
 | Convergência absoluta da DTFT bilateral | ✅ Provado em Lean |
-| Pareamento \(T(n)+T(-n)\) | ✅ Provado em Lean |
+| Pareamento $$\(T(n)+T(-n)\)$$ | ✅ Provado em Lean |
 | DTFT bilateral = série real de cossenos | ✅ Provado em Lean |
 | Série real = PSD fechada | ✅ Provado em Lean |
 | DTFT bilateral = equação (19) | ✅ Provado em Lean |
