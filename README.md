@@ -27,25 +27,25 @@ $$
 
 e
 
-\[
+$$
 P(\omega)=
 \frac{1-\psi^2}
 {3\left(1-2\psi\cos(\omega)+\psi^2\right)}.
-\]
+$$
 
 No artigo, essas relações correspondem às equações **(17)**, **(18)** e **(19)**.
 
 Além disso, foi formalizado um caso particular apresentado no artigo para \(r=3\), no qual
 
-\[
+$$
 \psi(\alpha)=\frac{1-2\alpha-\alpha^2}{2},
-\]
+$$
 
 e, para
 
-\[
+$$
 \alpha=\sqrt{2}-1,
-\]
+$$
 
 tem-se \(\psi=0\), o que conduz a um **espectro branco**.
 
@@ -116,12 +116,12 @@ flowchart LR
 
 No artigo,
 
-\[
+$$
 \psi=
 \frac{1}{4}
 \sum_{j=1}^{r}
 \beta_j(\alpha_j-\alpha_{j-1})^2.
-\]
+$$
 
 Esse parâmetro controla diretamente a sequência de autocorrelação e a forma do espectro.
 
@@ -133,11 +133,11 @@ Na formalização atual, a derivação geral dessa expressão a partir de todos 
 
 Para o caso discutido no artigo,
 
-\[
+$$
 \psi(\alpha)
 =
 \frac{1-2\alpha-\alpha^2}{2}.
-\]
+$$
 
 Em Lean:
 
@@ -160,9 +160,9 @@ theorem psi_zero_at_sqrt2_sub_one :
 
 Portanto,
 
-\[
+$$
 \boxed{\psi(\sqrt{2}-1)=0}.
-\]
+$$
 
 ---
 
@@ -179,11 +179,11 @@ def PSD (ψ ω : ℝ) : ℝ :=
 
 Isto representa
 
-\[
+$$
 P(\omega)=
 \frac{1-\psi^2}
 {3(1-2\psi\cos\omega+\psi^2)}.
-\]
+$$
 
 Foi demonstrado, por exemplo, que \(\psi=0\) produz uma PSD constante:
 
@@ -207,9 +207,9 @@ theorem r3_white_spectrum (ω : ℝ) :
 
 Logo,
 
-\[
+$$
 \boxed{P(\omega)=\frac13\quad\forall\omega},
-\]
+$$
 
 formalizando o resultado de espectro branco desse caso particular.
 
@@ -219,22 +219,22 @@ formalizando o resultado de espectro branco desse caso particular.
 
 Partindo das hipóteses
 
-\[
+$$
 R(0)=\frac13
-\]
+$$
 
 e
 
-\[
+$$
 R(k+1)=\psi R(k),
-\]
+$$
 
 foi usado o princípio de indução do Lean para provar:
 
-\[
+$$
 R(k)=\frac13\psi^k,
 \qquad k\in\mathbb N.
-\]
+$$
 
 O teorema formal é:
 
@@ -275,9 +275,9 @@ def autocorrZ (ψ : ℝ) (k : ℤ) : ℝ :=
 
 Assim,
 
-\[
+$$
 R(k)=\frac13\psi^{|k|}.
-\]
+$$
 
 A simetria da autocorrelação também foi verificada formalmente:
 
@@ -293,9 +293,9 @@ theorem autocorrZ_even
 
 Portanto,
 
-\[
+$$
 \boxed{R(-k)=R(k)}.
-\]
+$$
 
 Essa propriedade é essencial para converter a DTFT bilateral em uma série envolvendo apenas cossenos.
 
@@ -327,18 +327,18 @@ def psdDTFT
 
 que corresponde diretamente a
 
-\[
+$$
 P(\omega)
 =
 \sum_{k\in\mathbb Z}
 R(k)e^{-ik\omega}.
-\]
+$$
 
 O termo central também foi verificado:
 
-\[
+$$
 T(0)=R(0)=\frac13.
-\]
+$$
 
 ---
 
@@ -346,40 +346,40 @@ T(0)=R(0)=\frac13.
 
 Para calcular a soma infinita, foi utilizado o número complexo
 
-\[
+$$
 q=\psi e^{i\omega}.
-\]
+$$
 
 Sob a hipótese
 
-\[
+$$
 |\psi|<1,
-\]
+$$
 
 tem-se
 
-\[
+$$
 |q|<1,
-\]
+$$
 
 e portanto a série geométrica converge:
 
-\[
+$$
 \sum_{n=0}^{\infty}q^n
 =
 \frac{1}{1-q}.
-\]
+$$
 
 A formalização usa resultados da Mathlib para séries geométricas em espaços normados.
 
 Também foi provado:
 
-\[
+$$
 \operatorname{Re}
 \left[(\psi e^{i\omega})^n\right]
 =
 \psi^n\cos(n\omega).
-\]
+$$
 
 Esse resultado permite converter a série geométrica complexa em uma soma trigonométrica real.
 
@@ -389,7 +389,7 @@ Esse resultado permite converter a série geométrica complexa em uma soma trigo
 
 Foi formalmente demonstrado:
 
-\[
+$$
 \boxed{
 \sum_{n=0}^{\infty}
 \psi^n\cos(n\omega)
@@ -397,13 +397,13 @@ Foi formalmente demonstrado:
 \frac{1-\psi\cos\omega}
 {1-2\psi\cos\omega+\psi^2}
 }
-\]
+$$
 
 para \(|\psi|<1\).
 
 Em seguida, separando o termo \(n=0\), foi obtida a cauda:
 
-\[
+$$
 \boxed{
 \sum_{n=1}^{\infty}
 \psi^n\cos(n\omega)
@@ -411,7 +411,7 @@ Em seguida, separando o termo \(n=0\), foi obtida a cauda:
 \frac{\psi\cos\omega-\psi^2}
 {1-2\psi\cos\omega+\psi^2}
 }.
-\]
+$$
 
 Essa é a identidade central usada para transformar a série da PSD em sua forma racional fechada.
 
@@ -423,19 +423,19 @@ A formalização não apenas manipula a `tsum`; ela também verifica que a séri
 
 Para cada termo,
 
-\[
+$$
 \left|
 \frac13\psi^{|k|}e^{-ik\omega}
 \right|
 =
 \frac13|\psi|^{|k|},
-\]
+$$
 
 pois
 
-\[
+$$
 |e^{-ik\omega}|=1.
-\]
+$$
 
 Como \(|\psi|<1\), a série geométrica bilateral correspondente converge. Isso foi usado para provar em Lean que
 
@@ -451,17 +451,17 @@ sob a hipótese \(|\psi|<1\).
 
 A fórmula de Euler foi formalizada na forma
 
-\[
+$$
 e^{-ix}+e^{ix}=2\cos x.
-\]
+$$
 
 Em seguida, demonstrou-se que
 
-\[
+$$
 T(n)+T(-n)
 =
 \frac23\psi^n\cos(n\omega).
-\]
+$$
 
 Em Lean:
 
@@ -481,7 +481,7 @@ theorem dtftTerm_pair
 
 Esse é o passo que transforma a DTFT bilateral em
 
-\[
+$$
 P(\omega)
 =
 \frac13
@@ -489,7 +489,7 @@ P(\omega)
 \frac23
 \sum_{n=1}^{\infty}
 \psi^n\cos(n\omega).
-\]
+$$
 
 ---
 
@@ -512,13 +512,13 @@ def psdSeries (ψ ω : ℝ) : ℝ :=
 
 E foi demonstrado formalmente que
 
-\[
+$$
 \boxed{
 \operatorname{psdDTFT}(\psi,\omega)
 =
 \operatorname{psdSeries}(\psi,\omega)
 }.
-\]
+$$
 
 ---
 
@@ -542,13 +542,13 @@ theorem psd_closed_form
 
 Assim,
 
-\[
+$$
 \boxed{
 P(\omega)=
 \frac{1-\psi^2}
 {3(1-2\psi\cos\omega+\psi^2)}
 }.
-\]
+$$
 
 ---
 
@@ -581,7 +581,7 @@ theorem dtft_eq_psd
 
 Matematicamente, o Lean certifica:
 
-\[
+$$
 \boxed{
 \sum_{k\in\mathbb Z}
 \frac13\psi^{|k|}e^{-ik\omega}
@@ -590,7 +590,7 @@ Matematicamente, o Lean certifica:
 {3\left(1-2\psi\cos\omega+\psi^2\right)}
 }
 \qquad |\psi|<1.
-\]
+$$
 
 Esse resultado formaliza a passagem entre as equações **(18)** e **(19)** do artigo.
 
@@ -625,7 +625,7 @@ Esse resultado formaliza a passagem entre as equações **(18)** e **(19)** do a
 
 O projeto já verifica formalmente uma parte substancial da derivação espectral, em particular:
 
-\[
+$$
 \boxed{
 R(k+1)=\psi R(k)
 \Longrightarrow
@@ -636,7 +636,7 @@ R(k)=\frac13\psi^{|k|}
 \frac{1-\psi^2}
 {3(1-2\psi\cos\omega+\psi^2)}
 }.
-\]
+$$
 
 Também é formalizado um dos casos de espectro branco discutidos no artigo.
 
@@ -653,9 +653,9 @@ Ainda resta formalizar, entre outros pontos:
 5. a decomposição de \(f^k\) em \(r^k\) segmentos;
 6. a derivação formal das equações (11)–(16);
 7. a obtenção de
-   \[
+ $$
    R(k+1)=\psi R(k)
-   \]
+$$
    diretamente a partir da estrutura do mapa.
 
 Esse conjunto constitui a continuação natural do projeto.
@@ -770,7 +770,7 @@ R. A. da Costa and M. Eisencraft, “Spectral characteristics of a general piece
 
 Teorema principal verificado:
 
-\[
+$$
 \boxed{
 \sum_{k\in\mathbb Z}
 \frac13\psi^{|k|}e^{-ik\omega}
@@ -779,6 +779,6 @@ Teorema principal verificado:
 {3(1-2\psi\cos\omega+\psi^2)}
 },
 \qquad |\psi|<1.
-\]
+$$
 
 A próxima etapa natural é formalizar a derivação de \(R(k+1)=\psi R(k)\) diretamente a partir da família geral de mapas lineares por partes descrita no artigo.
